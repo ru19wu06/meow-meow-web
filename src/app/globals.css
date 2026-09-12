@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* ============================================================
+   出圈娛樂 CHU QUAN — Design Tokens
+   取自品牌識別：墨黑書法 / 櫻粉 / 燙金 / 米白紙感
+   ============================================================ */
+:root {
+  /* Brand */
+  --cq-ink: #33302f;          /* 墨黑 — 主要文字、書法感 */
+  --cq-ink-soft: #6e6a6b;     /* 次要文字 */
+  --cq-ink-mute: #a8a5a6;     /* 輔助 / placeholder */
+
+  --cq-pink: #e8b4c4;         /* 品牌櫻粉 */
+  --cq-pink-deep: #d97fa4;    /* 互動 / 強調 */
+  --cq-pink-soft: #f7e6ec;    /* 粉底色塊 */
+
+  --cq-gold: #e8b93f;         /* 燙金星星 */
+  --cq-gold-soft: #fdf3da;
+
+  /* Surface */
+  --cq-paper: #faf7f7;        /* 頁面底 — 清新明亮 */
+  --cq-surface: #ffffff;      /* 卡片 */
+  --cq-line: #ece6e7;         /* 分隔線 */
+
+  /* Semantic */
+  --background: var(--cq-paper);
+  --foreground: var(--cq-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-ink: var(--cq-ink);
+  --color-ink-soft: var(--cq-ink-soft);
+  --color-ink-mute: var(--cq-ink-mute);
+  --color-pink: var(--cq-pink);
+  --color-pink-deep: var(--cq-pink-deep);
+  --color-pink-soft: var(--cq-pink-soft);
+  --color-gold: var(--cq-gold);
+  --color-gold-soft: var(--cq-gold-soft);
+  --color-paper: var(--cq-paper);
+  --color-surface: var(--cq-surface);
+  --color-line: var(--cq-line);
+
+  --font-sans: var(--font-noto-tc);
+  --font-display: var(--font-anton);
+
+  /* 短影音卡片固定 9:16 */
+  --aspect-short: 9 / 16;
+
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "PingFang TC", "Microsoft JhengHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 中文標題字距收緊、行高放寬，閱讀更清爽 */
+h1, h2, h3 { letter-spacing: 0.02em; }
+
+/* ------------------------------------------------------------------
+   中國風點綴：水墨暈染背景 + 印章徽章 + 爪印小圖示
+   靈感來自品牌書法圓章 logo（墨黑 + 燙金），不使用外部素材。
+   ------------------------------------------------------------------ */
+
+/* 水墨暈染底：疊在大區塊背景，營造宣紙暈墨感，非常淡，不干擾閱讀 */
+.ink-wash {
+  position: relative;
+  isolation: isolate;
+}
+.ink-wash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 45% at 85% 8%, color-mix(in srgb, var(--cq-gold) 14%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 6% 92%, color-mix(in srgb, var(--cq-ink) 8%, transparent), transparent 70%);
+}
+
+/* 印章徽章：圓形墨框 + 燙金內底，用於「SINCE 2025」之類的品牌標記 */
+.seal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--cq-ink);
+  border-radius: var(--radius-pill);
+  color: var(--cq-ink);
+  background: var(--cq-gold-soft);
+}
+
+/* 爪印小圖示：套用品牌色的原創幾何貓掌，取代條列符號 */
+.paw-icon {
+  color: var(--cq-pink-deep);
+  flex: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
