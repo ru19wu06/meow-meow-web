@@ -26,7 +26,10 @@ export const company = {
 
 export const social = {
   instagram: { label: "@chuquan_sv", href: "https://www.instagram.com/chuquan_sv/" },
-  facebook: { label: "出圈短影音製作", href: "https://www.facebook.com/" },
+  facebook: {
+    label: "出圈短影音製作",
+    href: "https://www.facebook.com/people/%E5%87%BA%E5%9C%88%E7%9F%AD%E5%BD%B1%E9%9F%B3%E8%A3%BD%E4%BD%9C/61584221385645/",
+  },
   line: { label: "LINE official", href: "" },
   discord: { label: "Discord", href: "" },
   tiktok: { label: "TikTok", href: "" },

@@ -44,7 +44,7 @@ export default function AboutPage() {
             width={150}
             height={150}
             aria-hidden="true"
-            className="pointer-events-none absolute right-0 top-0 hidden w-28 opacity-90 sm:block"
+            className="pointer-events-none absolute right-0 top-0 w-24 opacity-90 sm:w-28"
           />
 
           {/* 負責人：放大版面單獨呈現 */}

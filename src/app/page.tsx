@@ -44,7 +44,7 @@ export default function Home() {
           width={168}
           height={168}
           aria-hidden="true"
-          className="pointer-events-none absolute -right-4 top-0 hidden w-36 -rotate-6 opacity-90 sm:block lg:w-44"
+          className="pointer-events-none absolute -right-2 top-0 w-24 -rotate-6 opacity-90 sm:-right-4 sm:w-36 lg:w-44"
         />
       </section>
 
@@ -118,7 +118,7 @@ export default function Home() {
           width={128}
           height={128}
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-0 hidden w-24 opacity-90 sm:block"
+          className="pointer-events-none absolute right-0 top-0 w-20 opacity-90 sm:w-24"
         />
         <ol className="grid gap-4 sm:grid-cols-3">
           {workflow.map((step) => (
@@ -172,7 +172,7 @@ export default function Home() {
               width={120}
               height={120}
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-4 -right-4 hidden w-28 opacity-95 sm:block"
+              className="pointer-events-none absolute -bottom-2 -right-2 w-24 opacity-95 sm:-bottom-4 sm:-right-4 sm:w-28"
             />
           </blockquote>
         ))}
