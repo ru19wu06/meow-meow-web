@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { clients, testimonials, social } from "@/content/site";
+import { clients, testimonials, social, shorts } from "@/content/site";
+import { InstagramEmbed } from "@/components/ui/instagram-embed";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
@@ -44,6 +45,21 @@ export default function ClientsPage() {
                 <h3 className="font-bold">{c.name}</h3>
                 <p className="mt-1 text-xs text-ink-mute">{c.industry}</p>
                 <p className="mt-2 text-sm text-ink-soft">{c.note}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">短影音實績</h2>
+          <p className="max-w-2xl text-sm text-ink-soft">
+            這幾支都是實際上線的合作案例，直接嵌自 Instagram，點開就能播放。
+          </p>
+          <ul className="grid gap-6 sm:grid-cols-2">
+            {shorts.map((v) => (
+              <li key={v.id} className="space-y-2 rounded-[var(--radius-card)] p-3 ring-1 ring-line">
+                <p className="px-1 text-xs text-pink-deep">{v.client}</p>
+                <InstagramEmbed url={v.src} />
               </li>
             ))}
           </ul>

@@ -27,7 +27,7 @@ export default function Home() {
       <main className="mx-auto w-full max-w-6xl px-6 py-16 space-y-24">
       <section className="ink-wash relative space-y-6">
         <Image src="/brand/logo.png" alt={company.nameZh} width={120} height={120} priority />
-        <p className="font-display text-6xl tracking-tight text-ink sm:text-8xl">CHU QUAN</p>
+        <p className="text-5xl font-black tracking-tight text-ink sm:text-7xl">出圈娛樂</p>
         <span className="seal-badge px-4 py-1.5 text-xs font-bold tracking-[0.2em]">
           SINCE {company.since}
         </span>
@@ -77,10 +77,13 @@ export default function Home() {
       <section id="shorts" className="space-y-4">
         <h2 className="text-xl font-bold">短影音作品</h2>
         <p className="text-sm text-ink-soft">實際上線案例，直接嵌自 Instagram，點開可播放。</p>
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {shorts.map((v) => (
-            <li key={v.id} className="space-y-2">
-              <p className="text-xs text-pink-deep">{v.client}</p>
+            <li
+              key={v.id}
+              className="space-y-2 rounded-[var(--radius-card)] bg-pink-soft/50 p-3 ring-2 ring-pink"
+            >
+              <p className="px-1 text-xs font-bold text-pink-deep">{v.client}</p>
               <InstagramEmbed url={v.src} />
             </li>
           ))}
